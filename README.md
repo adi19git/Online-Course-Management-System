@@ -45,30 +45,50 @@ A full-stack web application built using **Django + Django REST Framework + Java
 ## 📂 Project Structure
 
 ```
-OCMS
-│ manage.py
-│ README.md
+Online-Course-Management-System
 │
-├── ocms
-│    settings.py
-│    urls.py
+├── manage.py
+├── README.md
 │
-├── accounts        # Authentication App
-│    views.py
-│    models.py
-│    serializers.py
+├── ocms/                     ← MAIN DJANGO PROJECT (configuration only)
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
 │
-└── courses         # Course Management App
-     ├── templates
-     │     └── courses
-     │          login.html
-     │          courses.html
-     │          admin.html
-     │
-     └── static
-           └── courses
-                app.js
-                style.css
+├── accounts/                 ← Authentication + JWT login
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+│   └── migrations/
+│
+├── courses/                  ← Course system + frontend pages
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── migrations/
+│   │
+│   ├── templates/
+│   │   └── courses/
+│   │       ├── login.html
+│   │       ├── courses.html
+│   │       └── admin.html
+│   │
+│   └── static/
+│       └── courses/
+│           ├── app.js
+│           └── style.css
+│
+└── staticfiles/              ← auto-created after collectstatic
 ```
 
 ---
